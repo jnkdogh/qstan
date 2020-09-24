@@ -1,1 +1,1 @@
-Worker: qstan.js
+Worker: node qstan.js
