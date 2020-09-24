@@ -24,12 +24,13 @@ client.on('guildMemberAdd', member=>{
     const targetchannelid = '758307200845217793'
     if(member.user.bot){ return;}
     else{
-        if(!channel) return;
+        if(!channel) {return;}
+        else{
         channel.send(`Welcome to Indradhanu IITD server ${member}, We are glad to have you here.\nplease visit ${member.guild.channels.cache.get(targetchannelid).toString()}`);
+        let role = member.guild.roles.cache.some(r => r.name === "member");
+        member.roles.add(role);        
+        }
     }
-
-    let role = member.guild.roles.cache.some(r => r.name === "member");
-    member.roles.add(role);
 })
 
 client.on('message', message => {
